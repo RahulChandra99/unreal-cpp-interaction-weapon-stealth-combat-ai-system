@@ -1,0 +1,23 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\gamedevelopment\\unrealengine\\projects\\combatproject\\plugins\\darkerno99922f12bdc1v10\\source\\darkernodes\\private\\colorizer\\colorizertext.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\gamedevelopment\\unrealengine\\projects\\combatproject\\intermediate\\build\\win64\\x64\\combatprojecteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "d:\\gamedevelopment\\unrealengine\\projects\\combatproject\\plugins\\darkerno99922f12bdc1v10\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\darkernodes\\definitions.darkernodes.h",
+            "d:\\gamedevelopment\\unrealengine\\projects\\combatproject\\plugins\\darkerno99922f12bdc1v10\\source\\darkernodes\\private\\colorizer.h",
+            "d:\\gamedevelopment\\unrealengine\\projects\\combatproject\\plugins\\darkerno99922f12bdc1v10\\source\\darkernodes\\public\\darkernodessettings.h",
+            "d:\\gamedevelopment\\unrealengine\\projects\\combatproject\\plugins\\darkerno99922f12bdc1v10\\intermediate\\build\\win64\\unrealeditor\\inc\\darkernodes\\uht\\darkernodessettings.generated.h",
+            "d:\\gamedevelopment\\unrealengine\\projects\\combatproject\\plugins\\darkerno99922f12bdc1v10\\source\\darkernodes\\private\\lib\\brushdatabase.h",
+            "d:\\ue 5\\ue_5.5\\engine\\source\\runtime\\slate\\public\\slatematerialbrush.h",
+            "d:\\gamedevelopment\\unrealengine\\projects\\combatproject\\plugins\\darkerno99922f12bdc1v10\\intermediate\\build\\win64\\unrealeditor\\inc\\darkernodes\\uht\\brushdatabase.generated.h",
+            "d:\\gamedevelopment\\unrealengine\\projects\\combatproject\\plugins\\darkerno99922f12bdc1v10\\source\\darkernodes\\private\\lib\\rob.h",
+            "d:\\ue 5\\ue_5.5\\engine\\source\\runtime\\slatecore\\public\\styling\\starshipcorestyle.h",
+            "d:\\ue 5\\ue_5.5\\engine\\source\\runtime\\slatecore\\public\\styling\\toolbarstyle.h",
+            "d:\\ue 5\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\slatecore\\uht\\toolbarstyle.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

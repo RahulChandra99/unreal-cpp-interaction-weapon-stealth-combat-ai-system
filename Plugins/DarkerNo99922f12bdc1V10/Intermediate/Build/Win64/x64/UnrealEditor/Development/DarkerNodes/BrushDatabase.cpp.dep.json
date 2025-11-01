@@ -1,0 +1,35 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\gamedevelopment\\unrealengine\\projects\\combatproject\\plugins\\darkerno99922f12bdc1v10\\source\\darkernodes\\private\\lib\\brushdatabase.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\gamedevelopment\\unrealengine\\projects\\combatproject\\intermediate\\build\\win64\\x64\\combatprojecteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "d:\\gamedevelopment\\unrealengine\\projects\\combatproject\\plugins\\darkerno99922f12bdc1v10\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\darkernodes\\definitions.darkernodes.h",
+            "d:\\gamedevelopment\\unrealengine\\projects\\combatproject\\plugins\\darkerno99922f12bdc1v10\\source\\darkernodes\\private\\lib\\brushdatabase.h",
+            "d:\\ue 5\\ue_5.5\\engine\\source\\runtime\\slate\\public\\slatematerialbrush.h",
+            "d:\\gamedevelopment\\unrealengine\\projects\\combatproject\\plugins\\darkerno99922f12bdc1v10\\intermediate\\build\\win64\\unrealeditor\\inc\\darkernodes\\uht\\brushdatabase.generated.h",
+            "d:\\ue 5\\ue_5.5\\engine\\source\\editor\\unrealed\\public\\filehelpers.h",
+            "d:\\ue 5\\ue_5.5\\engine\\source\\editor\\unrealed\\public\\packagetools.h",
+            "d:\\ue 5\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\unrealed\\uht\\packagetools.generated.h",
+            "d:\\ue 5\\ue_5.5\\engine\\source\\developer\\sourcecontrol\\public\\isourcecontrolprovider.h",
+            "d:\\ue 5\\ue_5.5\\engine\\source\\developer\\sourcecontrol\\public\\isourcecontrolchangelist.h",
+            "d:\\ue 5\\ue_5.5\\engine\\source\\developer\\sourcecontrol\\public\\isourcecontrolchangeliststate.h",
+            "d:\\ue 5\\ue_5.5\\engine\\source\\developer\\sourcecontrol\\public\\isourcecontrolstate.h",
+            "d:\\ue 5\\ue_5.5\\engine\\source\\developer\\sourcecontrol\\public\\isourcecontroloperation.h",
+            "d:\\ue 5\\ue_5.5\\engine\\source\\developer\\sourcecontrol\\public\\sourcecontrolresultinfo.h",
+            "d:\\ue 5\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\unrealed\\uht\\filehelpers.generated.h",
+            "d:\\ue 5\\ue_5.5\\engine\\source\\runtime\\engine\\public\\imageutils.h",
+            "d:\\ue 5\\ue_5.5\\engine\\source\\runtime\\projects\\public\\interfaces\\ipluginmanager.h",
+            "d:\\ue 5\\ue_5.5\\engine\\source\\runtime\\projects\\public\\plugindescriptor.h",
+            "d:\\ue 5\\ue_5.5\\engine\\source\\runtime\\projects\\public\\custombuildsteps.h",
+            "d:\\ue 5\\ue_5.5\\engine\\source\\runtime\\projects\\public\\localizationdescriptor.h",
+            "d:\\ue 5\\ue_5.5\\engine\\source\\runtime\\projects\\public\\moduledescriptor.h",
+            "d:\\ue 5\\ue_5.5\\engine\\source\\runtime\\projects\\public\\plugindisalloweddescriptor.h",
+            "d:\\ue 5\\ue_5.5\\engine\\source\\runtime\\projects\\public\\pluginreferencedescriptor.h",
+            "d:\\ue 5\\ue_5.5\\engine\\source\\runtime\\projects\\public\\versescope.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
