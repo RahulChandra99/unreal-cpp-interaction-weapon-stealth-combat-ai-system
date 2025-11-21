@@ -12,34 +12,33 @@ class COMBATPROJECT_API AProjectileBase : public AActor
 public:
 	AProjectileBase();
 
-	UPROPERTY(VisibleAnywhere,BlueprintReadWrite, Category = "Components")
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Components")
 	class UProjectileMovementComponent* ProjectileMovement;
 
 protected:
 	virtual void BeginPlay() override;
 
-	UPROPERTY(VisibleAnywhere, Category = "Components")
-	class USphereComponent* CollisionComp;
-
-	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite, Category = "Effects")
-	class UNiagaraSystem* ImpactEffect;
 	
-	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite, Category = "Effects")
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Effects")
+	class UNiagaraSystem* ImpactEffect;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Effects")
 	class USoundBase* ImpactSFX;
 
 	UPROPERTY(VisibleAnywhere, Category = "Components")
 	class UStaticMeshComponent* ThrowableMesh;
 
-	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite, Category = "Combat")
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Combat")
 	float Damage = 50.f;
 
-	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite, Category = "Combat")
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Combat")
 	float ExplosionRadius = 300.f;
 
-	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite, Category = "Combat")
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Combat")
 	float ExplosionTime = 3.0f;
-	
-	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite, Category = "Combat")
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Combat")
 	bool bIsProjectileThrowable;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Combat")
@@ -50,6 +49,8 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	bool bIsForCoin;
+
+	 // mark true for axe projectiles
 
 	UFUNCTION()
 	void OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor,
@@ -62,4 +63,15 @@ protected:
 	void ExplodeBP(const TArray<AActor*>& HitEnemies);
 
 	FTimerHandle FuseTimerHandle;
+
+private:
+	void StickIntoTarget(UPrimitiveComponent* HitComponent, const FHitResult& Hit);
+
+public:
+
+	UPROPERTY(VisibleAnywhere, Category = "Components")
+	class USphereComponent* CollisionComp;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
+	bool bIsAxe = false;
 };

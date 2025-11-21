@@ -166,7 +166,8 @@ protected:
 	int32 SavedReserveAmmo = -1;
 
 	
-
+	UPROPERTY(EditAnywhere,BlueprintReadWrite)
+	bool bCanDebug = false;
 
 	bool bCanShoot = true;
 	FTimerHandle FireDelayHandle;

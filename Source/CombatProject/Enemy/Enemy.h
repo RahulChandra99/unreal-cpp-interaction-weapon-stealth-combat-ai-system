@@ -40,6 +40,10 @@ public:
 
 	UFUNCTION()
 	void HighlightEnemy(bool bEnable);
+	
+	UFUNCTION(BlueprintImplementableEvent)
+	void SenseEnemyVisual(bool bEnable);
+	
 	void HandleDeath(const FVector& ExplosionLocation);
 	void EnableRagdoll();
 

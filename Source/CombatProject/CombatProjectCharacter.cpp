@@ -14,6 +14,7 @@
 #include "EnhancedInputSubsystems.h"
 #include "AbilitySystemComponent.h"
 #include "InputActionValue.h"
+#include "Components/SphereComponent.h"
 #include "Enemy/Enemy.h"
 #include "Engine/OverlapResult.h"
 #include "GameFramework/ProjectileMovementComponent.h"
@@ -205,17 +206,17 @@ void ACombatProjectCharacter::ThrowGrenade(TSubclassOf<AProjectileBase> GrenadeA
 	}
 }
 
-void ACombatProjectCharacter::ActivateSenseVision()
+void ACombatProjectCharacter::ActivateSenseVision(bool bEnable)
 {
 	FVector PlayerLocation = GetActorLocation();
-        float SenseRadius = 200000.f;
+	
     
-        TArray<FOverlapResult> Overlaps;
-        FCollisionShape Sphere = FCollisionShape::MakeSphere(SenseRadius);
-        FCollisionQueryParams Params;
-        Params.AddIgnoredActor(this);
+	TArray<FOverlapResult> Overlaps;
+	FCollisionShape Sphere = FCollisionShape::MakeSphere(SenseRadius);
+	FCollisionQueryParams Params;
+	Params.AddIgnoredActor(this);
     
-        bool bHit = GetWorld()->OverlapMultiByChannel(
+	bool bHit = GetWorld()->OverlapMultiByChannel(
             Overlaps,
             PlayerLocation,
             FQuat::Identity,
@@ -231,7 +232,7 @@ void ACombatProjectCharacter::ActivateSenseVision()
                 AEnemy* Enemy = Cast<AEnemy>(Hit.GetActor());
                 if (Enemy)
                 {
-                    Enemy->HighlightEnemy(true);
+                    Enemy->HighlightEnemy(bEnable);
                 }
             }
         }
@@ -387,4 +388,65 @@ void ACombatProjectCharacter::UpdateGrabbedLocation(float DeltaTime)
 	const FVector TargetLocation = HandLocation + Offset;
 
 	PhysicsHandle->SetTargetLocationAndRotation(TargetLocation, HandRotation);
+}
+
+// inside your Character class
+
+void ACombatProjectCharacter::ThrowAxeAtTarget(AActor* Target)
+{
+	if (!Target || !AxeProjectileClass) return;
+
+	// Spawn point from right-hand socket
+	const FVector SpawnLoc = GetMesh()->GetSocketLocation(TEXT("Hand_RSocket"));
+	const FRotator ViewRot = FollowCamera ? FollowCamera->GetComponentRotation() : GetControlRotation();
+
+	// Find target position (prefer head bone)
+	FVector TargetLoc = Target->GetActorLocation();
+	FVector TargetVel = FVector::ZeroVector;
+	const FName HeadBone = TEXT("head");
+
+	if (const ACharacter* TargetChar = Cast<ACharacter>(Target))
+	{
+		if (const USkeletalMeshComponent* TargetMesh = TargetChar->GetMesh())
+		{
+			const FVector BoneLoc = TargetMesh->GetBoneLocation(HeadBone);
+			if (!BoneLoc.IsNearlyZero()) TargetLoc = BoneLoc;
+		}
+		TargetVel = TargetChar->GetVelocity();
+	}
+
+	// Predict future position based on projectile speed
+	const float ProjectileSpeed = 2200.f;
+	const float Distance = FVector::Dist(SpawnLoc, TargetLoc);
+	const float TimeToTarget = Distance / ProjectileSpeed;
+	const FVector PredictedLoc = TargetLoc + TargetVel * TimeToTarget;
+
+	// Compute direction
+	const FVector LaunchDir = (PredictedLoc - SpawnLoc).GetSafeNormal();
+	const FRotator SpawnRot = LaunchDir.Rotation();
+
+	FActorSpawnParameters Params;
+	Params.Instigator = this;
+	Params.Owner = this;
+	Params.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButAlwaysSpawn;
+
+	// Spawn projectile
+	AProjectileBase* Axe = GetWorld()->SpawnActor<AProjectileBase>(AxeProjectileClass, SpawnLoc, SpawnRot, Params);
+	if (!Axe) return;
+
+	// Mark it as axe and ignore self collision
+	Axe->bIsAxe = true;
+	if (Axe->CollisionComp)
+	{
+		Axe->CollisionComp->IgnoreActorWhenMoving(this, true);
+	}
+
+	// Launch forward
+	if (Axe->ProjectileMovement)
+	{
+		Axe->ProjectileMovement->Velocity = LaunchDir * ProjectileSpeed;
+	}
+
+	// Optional debug line
+	DrawDebugLine(GetWorld(), SpawnLoc, SpawnLoc + LaunchDir * 2000.f, FColor::Red, false, 1.0f, 0, 1.0f);
 }

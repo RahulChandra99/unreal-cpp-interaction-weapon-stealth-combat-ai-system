@@ -91,7 +91,7 @@ void AWeapon::PerformWeaponTrace()
 		ETraceTypeQuery::TraceTypeQuery1,
 		false,
 		ActorsToIgnore,
-		EDrawDebugTrace::None,
+		bCanDebug ? EDrawDebugTrace::ForDuration : EDrawDebugTrace::None,
 		HitResults,
 		true
 	);

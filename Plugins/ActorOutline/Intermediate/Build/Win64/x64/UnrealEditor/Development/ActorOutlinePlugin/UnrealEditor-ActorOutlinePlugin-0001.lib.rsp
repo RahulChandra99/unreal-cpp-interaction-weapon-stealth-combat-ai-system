@@ -1,0 +1,16 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-ActorOutlinePlugin-0001.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"D:\GameDevelopment\UnrealEngine\Projects\GithubProjects\unreal-cpp-interaction-weapon-stealth-system\Intermediate\Build\Win64\x64\CombatProjectEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h.obj"
+"D:\GameDevelopment\UnrealEngine\Projects\GithubProjects\unreal-cpp-interaction-weapon-stealth-system\Plugins\ActorOutline\Intermediate\Build\Win64\x64\UnrealEditor\Development\ActorOutlinePlugin\ActorOutlinePlugin.cpp.obj"
+"D:\GameDevelopment\UnrealEngine\Projects\GithubProjects\unreal-cpp-interaction-weapon-stealth-system\Plugins\ActorOutline\Intermediate\Build\Win64\x64\UnrealEditor\Development\ActorOutlinePlugin\OutlineComponent.cpp.obj"
+"D:\GameDevelopment\UnrealEngine\Projects\GithubProjects\unreal-cpp-interaction-weapon-stealth-system\Plugins\ActorOutline\Intermediate\Build\Win64\x64\UnrealEditor\Development\ActorOutlinePlugin\PerModuleInline.gen.cpp.obj"
+"D:\GameDevelopment\UnrealEngine\Projects\GithubProjects\unreal-cpp-interaction-weapon-stealth-system\Plugins\ActorOutline\Intermediate\Build\Win64\x64\UnrealEditor\Development\ActorOutlinePlugin\ActorOutlinePlugin.init.gen.cpp.obj"
+"D:\GameDevelopment\UnrealEngine\Projects\GithubProjects\unreal-cpp-interaction-weapon-stealth-system\Plugins\ActorOutline\Intermediate\Build\Win64\x64\UnrealEditor\Development\ActorOutlinePlugin\OutlineComponent.gen.cpp.obj"
+"D:\GameDevelopment\UnrealEngine\Projects\GithubProjects\unreal-cpp-interaction-weapon-stealth-system\Plugins\ActorOutline\Intermediate\Build\Win64\x64\UnrealEditor\Development\ActorOutlinePlugin\Default.rc2.res"
+/OUT:"D:\GameDevelopment\UnrealEngine\Projects\GithubProjects\unreal-cpp-interaction-weapon-stealth-system\Plugins\ActorOutline\Intermediate\Build\Win64\x64\UnrealEditor\Development\ActorOutlinePlugin\UnrealEditor-ActorOutlinePlugin-0001.lib"

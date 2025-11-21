@@ -72,7 +72,9 @@ void AEnemy::Tick(float DeltaTime)
 void AEnemy::HighlightEnemy(bool bEnable)
 {
 	GetMesh()->SetRenderCustomDepth(bEnable);
-	GetMesh()->CustomDepthStencilValue = bEnable ? 1 : 0;
+	GetMesh()->CustomDepthStencilValue = bEnable ? 255 : 0;
+
+	SenseEnemyVisual(bEnable);
 }
 
 void AEnemy::HandleDeath(const FVector& ExplosionLocation)

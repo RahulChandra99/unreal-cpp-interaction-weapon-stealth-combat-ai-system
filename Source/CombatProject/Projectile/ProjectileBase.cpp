@@ -6,60 +6,68 @@
 #include "Engine/OverlapResult.h"
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Kismet/GameplayStatics.h"
+#include "GameFramework/Character.h"
 
 AProjectileBase::AProjectileBase()
 {
 	PrimaryActorTick.bCanEverTick = false;
 
-	// Collision setup
 	CollisionComp = CreateDefaultSubobject<USphereComponent>(TEXT("CollisionComp"));
 	CollisionComp->InitSphereRadius(15.f);
 	CollisionComp->SetCollisionProfileName(TEXT("BlockAllDynamic"));
 	CollisionComp->SetSimulatePhysics(false);
-	CollisionComp->SetEnableGravity(true);
-	CollisionComp->BodyInstance.bUseCCD = true; // prevents tunneling
 	CollisionComp->SetNotifyRigidBodyCollision(true);
 	CollisionComp->OnComponentHit.AddDynamic(this, &AProjectileBase::OnHit);
 	RootComponent = CollisionComp;
-	CollisionComp->IgnoreActorWhenMoving(GetOwner(), true);
 
-	// Visual mesh
 	ThrowableMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ThrowableMesh"));
 	ThrowableMesh->SetupAttachment(CollisionComp);
 	ThrowableMesh->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 
-	// Projectile movement
 	ProjectileMovement = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("ProjectileMovement"));
 	ProjectileMovement->SetUpdatedComponent(CollisionComp);
-	ProjectileMovement->InitialSpeed = 1200.f;
-	ProjectileMovement->MaxSpeed = 1200.f;
+	ProjectileMovement->InitialSpeed = 2000.f;
+	ProjectileMovement->MaxSpeed = 2000.f;
 	ProjectileMovement->bRotationFollowsVelocity = true;
-	ProjectileMovement->bShouldBounce = true;
-	ProjectileMovement->Bounciness = 0.4f;
-	ProjectileMovement->Friction = 0.2f;
+	ProjectileMovement->bShouldBounce = false;
 	ProjectileMovement->ProjectileGravityScale = 1.0f;
 
 	InitialLifeSpan = 10.f;
-	
-	
 }
 
 void AProjectileBase::BeginPlay()
 {
 	Super::BeginPlay();
-	
-	// Start fuse timer
-	if (bIsProjectileThrowable)
+
+	if (bIsProjectileThrowable && !bIsAxe)
+	{
 		GetWorldTimerManager().SetTimer(FuseTimerHandle, this, &AProjectileBase::Explode, ExplosionTime, false);
-	
+	}
 }
 
-void AProjectileBase::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, 
+void AProjectileBase::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor,
 	UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
 {
+	if (!OtherActor || OtherActor == GetOwner()) return;
+
+	if (bIsAxe)
+	{
+		// Stick logic for thrown axe
+		UGameplayStatics::ApplyPointDamage(OtherActor, Damage, GetVelocity().GetSafeNormal(),
+			Hit, GetInstigatorController(), this, DamageType);
+
+		if (ImpactEffect)
+			UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), ImpactEffect, Hit.ImpactPoint);
+
+		if (ImpactSFX)
+			UGameplayStatics::PlaySoundAtLocation(this, ImpactSFX, GetActorLocation());
+
+		StickIntoTarget(OtherComp, Hit);
+		return;
+	}
+
 	if (bIsProjectileThrowable)
 	{
-		// Switch from projectile movement to physics roll on first impact
 		if (ProjectileMovement && ProjectileMovement->IsActive())
 		{
 			ProjectileMovement->StopMovementImmediately();
@@ -72,38 +80,57 @@ void AProjectileBase::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor,
 			CollisionComp->SetPhysicsLinearVelocity(GetVelocity() * 0.5f);
 		}
 	}
-	
 	else
 	{
-		if (OtherActor && OtherActor != GetOwner())
-        	{
-        		UGameplayStatics::ApplyDamage(OtherActor, Damage, GetInstigatorController(), this, DamageType);
-        		
-        		if (ImpactEffect) 
-        			UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), ImpactEffect, GetActorLocation());
-        		
-        		if (ImpactSFX) 
-        			UGameplayStatics::PlaySoundAtLocation( this, ImpactSFX, GetActorLocation() );
-        		
-        		Destroy();
-        	}
+		UGameplayStatics::ApplyDamage(OtherActor, Damage, GetInstigatorController(), this, DamageType);
+
+		if (ImpactEffect)
+			UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), ImpactEffect, GetActorLocation());
+
+		if (ImpactSFX)
+			UGameplayStatics::PlaySoundAtLocation(this, ImpactSFX, GetActorLocation());
+
+		Destroy();
 	}
-	
+}
+
+void AProjectileBase::StickIntoTarget(UPrimitiveComponent* HitComponent, const FHitResult& Hit)
+{
+	if (!HitComponent) return;
+
+	if (ProjectileMovement)
+	{
+		ProjectileMovement->StopMovementImmediately();
+		ProjectileMovement->Deactivate();
+	}
+
+	CollisionComp->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+	CollisionComp->SetSimulatePhysics(false);
+
+	// Attach to skeletal mesh bone if available
+	if (USkeletalMeshComponent* SkelComp = Cast<USkeletalMeshComponent>(HitComponent))
+	{
+		FName BoneName = Hit.BoneName;
+		if (BoneName.IsNone())
+		{
+			BoneName = TEXT("head"); // fallback
+		}
+		AttachToComponent(SkelComp, FAttachmentTransformRules::KeepWorldTransform, BoneName);
+	}
+	else
+	{
+		AttachToComponent(HitComponent, FAttachmentTransformRules::KeepWorldTransform);
+	}
 }
 
 void AProjectileBase::Explode()
 {
 	FVector ExplosionLocation = GetActorLocation();
-
 	TArray<FOverlapResult> Overlaps;
 	FCollisionShape Sphere = FCollisionShape::MakeSphere(ExplosionRadius);
 	FCollisionQueryParams Params;
 	Params.AddIgnoredActor(this);
 	Params.AddIgnoredActor(GetOwner());
-
-	ExplosionRadius = 600.f;
-	float LaunchForce = 400.f;
-	float UpwardBoost = 200.f;
 
 	TArray<AActor*> HitEnemies;
 
@@ -116,36 +143,19 @@ void AProjectileBase::Explode()
 		Params
 	);
 
-	if (!bIsForCoin)
+	if (!bIsForCoin && bHit)
 	{
-		if (bHit)
+		for (const FOverlapResult& Result : Overlaps)
 		{
-			for (const FOverlapResult& Result : Overlaps)
+			AActor* HitActor = Result.GetActor();
+			if (AEnemy* Enemy = Cast<AEnemy>(HitActor))
 			{
-				AActor* HitActor = Result.GetActor();
-				if (!HitActor) continue;
-
-				// Check if it's an enemy character
-				if (AEnemy* Enemy = Cast<AEnemy>(HitActor))
-				{
-					// Calculate launch direction
-					FVector Direction = (Enemy->GetActorLocation() - ExplosionLocation).GetSafeNormal();
-					Direction.Z += UpwardBoost / LaunchForce; // add some lift
-					FVector LaunchVelocity = Direction * LaunchForce;
-
-					// Launch first (uses CharacterMovement)
-					Enemy->LaunchCharacter(LaunchVelocity, true, true);
-
-					// Call custom death logic
-					Enemy->HandleDeath(ExplosionLocation);
-				}
+				FVector Dir = (Enemy->GetActorLocation() - ExplosionLocation).GetSafeNormal();
+				Enemy->LaunchCharacter(Dir * 400.f + FVector(0, 0, 200.f), true, true);
+				Enemy->HandleDeath(ExplosionLocation);
 			}
 		}
-	} 
-	
+	}
 
-	// Notify Blueprints
 	ExplodeBP(HitEnemies);
-	
 }
-

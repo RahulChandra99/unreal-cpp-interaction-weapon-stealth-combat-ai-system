@@ -1,0 +1,14 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\gamedevelopment\\unrealengine\\projects\\githubprojects\\unreal-cpp-interaction-weapon-stealth-system\\plugins\\actoroutline\\source\\actoroutlineplugin\\private\\actoroutlineplugin.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\gamedevelopment\\unrealengine\\projects\\githubprojects\\unreal-cpp-interaction-weapon-stealth-system\\intermediate\\build\\win64\\x64\\combatprojecteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "d:\\gamedevelopment\\unrealengine\\projects\\githubprojects\\unreal-cpp-interaction-weapon-stealth-system\\plugins\\actoroutline\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\actoroutlineplugin\\definitions.actoroutlineplugin.h",
+            "d:\\gamedevelopment\\unrealengine\\projects\\githubprojects\\unreal-cpp-interaction-weapon-stealth-system\\plugins\\actoroutline\\source\\actoroutlineplugin\\public\\actoroutlineplugin.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

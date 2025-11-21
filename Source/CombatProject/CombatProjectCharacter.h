@@ -82,6 +82,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float YLookSens = 0.7f;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TSubclassOf<AProjectileBase> AxeProjectileClass;
+
 protected:
 
 	/** Called for movement input */
@@ -116,6 +119,9 @@ protected:
 	// Helper
 	void UpdateGrabbedLocation(float DeltaTime);
 
+	UFUNCTION(BlueprintCallable)
+	void ThrowAxeAtTarget(AActor* Target);
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Grab")
 	class UPhysicsHandleComponent* PhysicsHandle;
 
@@ -126,9 +132,8 @@ protected:
 	FName GrabBoneName = "pelvis";
 
 	USkeletalMeshComponent* GrabbedMesh = nullptr;
-
-
-
+	
+	
 	
 
 
@@ -168,8 +173,12 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void ThrowGrenade(TSubclassOf<AProjectileBase> GrenadeActor);
 
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Ability")
+	float SenseRadius = 2000000.f;
+	
 	UFUNCTION(BlueprintCallable)
-	void ActivateSenseVision();
+	void ActivateSenseVision(bool bEnable);
 
 	
 };
