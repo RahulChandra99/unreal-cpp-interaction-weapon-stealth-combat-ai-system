@@ -1,4 +1,4 @@
-# Weapon and Interaction Stealth System  
+# Weapons, Interactions, Stealth and Combat System  
 Unreal Engine 5 Blueprints and C++ Project
 
 ## Project Overview  
