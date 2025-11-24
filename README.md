@@ -39,13 +39,6 @@ https://www.rahulchandraportfolio.com/weapons-interaction-system
 - Behaviour Tree and Blackboard for alert, chase and patrol  
 - Clear state logic for each AI
 
-## Getting Started  
-1. Open the project in the correct Unreal Engine version  
-2. Build the C++ code  
-3. Open the sample map  
-4. Press play to test the full setup  
-5. Use the Data Assets to adjust weapons, AI and interactions
-
 ## Structure and Extension  
 - Each weapon extends from a base class and uses data assets so you can add more items with no code change  
 - Interaction logic is inside one component so you can add new interactable objects by creating child classes  
