@@ -146,7 +146,7 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Recoil")
 	float RecoilPitchMax = 1.6f;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Recoil")
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category="Recoil")
 	float RecoilYawMin = -0.4f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Recoil")

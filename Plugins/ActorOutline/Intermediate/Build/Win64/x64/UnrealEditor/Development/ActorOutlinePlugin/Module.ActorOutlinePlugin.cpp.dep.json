@@ -1,0 +1,24 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\gamedevelopment\\unrealengine\\projects\\githubprojects\\unreal-cpp-interaction-weapon-stealth-system\\plugins\\actoroutline\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\actoroutlineplugin\\module.actoroutlineplugin.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\gamedevelopment\\unrealengine\\projects\\githubprojects\\unreal-cpp-interaction-weapon-stealth-system\\intermediate\\build\\win64\\x64\\combatprojecteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "d:\\gamedevelopment\\unrealengine\\projects\\githubprojects\\unreal-cpp-interaction-weapon-stealth-system\\plugins\\actoroutline\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\actoroutlineplugin\\definitions.actoroutlineplugin.h",
+            "d:\\gamedevelopment\\unrealengine\\projects\\githubprojects\\unreal-cpp-interaction-weapon-stealth-system\\plugins\\actoroutline\\intermediate\\build\\win64\\unrealeditor\\inc\\actoroutlineplugin\\uht\\actoroutlineplugin.init.gen.cpp",
+            "d:\\gamedevelopment\\unrealengine\\projects\\githubprojects\\unreal-cpp-interaction-weapon-stealth-system\\plugins\\actoroutline\\intermediate\\build\\win64\\unrealeditor\\inc\\actoroutlineplugin\\uht\\outlinecomponent.gen.cpp",
+            "d:\\gamedevelopment\\unrealengine\\projects\\githubprojects\\unreal-cpp-interaction-weapon-stealth-system\\plugins\\actoroutline\\source\\actoroutlineplugin\\public\\outlinecomponent.h",
+            "d:\\gamedevelopment\\unrealengine\\projects\\githubprojects\\unreal-cpp-interaction-weapon-stealth-system\\plugins\\actoroutline\\intermediate\\build\\win64\\unrealeditor\\inc\\actoroutlineplugin\\uht\\outlinecomponent.generated.h",
+            "d:\\gamedevelopment\\unrealengine\\projects\\githubprojects\\unreal-cpp-interaction-weapon-stealth-system\\plugins\\actoroutline\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\actoroutlineplugin\\permoduleinline.gen.cpp",
+            "d:\\ue 5\\ue_5.5\\engine\\source\\runtime\\core\\public\\hal\\permoduleinline.inl",
+            "d:\\gamedevelopment\\unrealengine\\projects\\githubprojects\\unreal-cpp-interaction-weapon-stealth-system\\plugins\\actoroutline\\source\\actoroutlineplugin\\private\\actoroutlineplugin.cpp",
+            "d:\\gamedevelopment\\unrealengine\\projects\\githubprojects\\unreal-cpp-interaction-weapon-stealth-system\\plugins\\actoroutline\\source\\actoroutlineplugin\\public\\actoroutlineplugin.h",
+            "d:\\gamedevelopment\\unrealengine\\projects\\githubprojects\\unreal-cpp-interaction-weapon-stealth-system\\plugins\\actoroutline\\source\\actoroutlineplugin\\private\\outlinecomponent.cpp",
+            "d:\\ue 5\\ue_5.5\\engine\\source\\runtime\\engine\\public\\net\\unrealnetwork.h",
+            "d:\\ue 5\\ue_5.5\\engine\\source\\runtime\\net\\core\\public\\net\\core\\propertyconditions\\propertyconditions.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
