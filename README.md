@@ -1,10 +1,20 @@
-# Weapons, Interactions, Stealth and Combat System  
+# Weapons, Interactions, Stealth and Combat System with AI  
 Unreal Engine 5 Blueprints and C++ Project
+
+## Table of Contents
+- [Weapons, Interaction and Steath Project](#Weapons,-Interaction-and-Steath-Project)
+- [Usage](#usage)
+- [Demo](#demo)
+- [License](#license)
+[Weapons, Interaction and Steath Project](#Weapons,-Interaction-and-Steath-Project)
+
 
 ## Project Overview  
 This project shows a modular setup for weapons, interactions, and stealth with AI. It draws ideas from action stealth games and focuses on clean structure, easy expansion, and smooth player control.  
 Full showcase:  
 https://www.rahulchandraportfolio.com/weapons-interaction-system
+
+## Weapons, Interaction and Steath Project
 
 ## Features  
 
