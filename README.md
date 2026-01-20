@@ -14,14 +14,16 @@
 - [Souls-Like Combat Project](#Souls-Like-Combat-Project)
 
 # Weapons, Interactions, Stealth and Combat System with AI  
-Unreal Engine 5 Blueprints and C++ Project
 
 ## Project Overview  
-This project shows a modular setup for weapons, interactions, and stealth with AI. It draws ideas from action stealth games and focuses on clean structure, easy expansion, and smooth player control.  
-Full showcase:  
-https://www.rahulchandraportfolio.com/weapons-interaction-system
+- Inspired by Hitman, featuring stealth mechanics, interactive environments, and context-based actions.
+- Combines modular weapon systems with ALS-style procedural movement for fluid character control.
+- Designed as a flexible, modular framework that is easy to modify, extend, and integrate new gameplay features into.
 
-## Weapons, Interaction and Steath Project
+### Watch Demo
+
+[![Watch Demo](https://github.com/user-attachments/assets/4eddc091-8649-4187-a79c-8fa5acec11e9)](https://www.youtube.com/watch?v=21OzrVktwzA)
+
 
 ## Features  
 
@@ -61,6 +63,8 @@ https://www.rahulchandraportfolio.com/weapons-interaction-system
 - Interaction logic is inside one component so you can add new interactable objects by creating child classes  
 - AI uses Behaviour Trees which makes it easy to add new states, paths or reactions  
 - Movement uses clear layers that allow easy editing inside the animation blueprint
+
+## Souls-Like Combat Project
 
 </p>
 
