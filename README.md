@@ -1,13 +1,20 @@
-# Weapons, Interactions, Stealth and Combat System with AI  
-Unreal Engine 5 Blueprints and C++ Project
+<a href="https://www.unrealengine.com/">![Unreal Engine](https://img.shields.io/badge/Unreal-5.5-dea309?style=flat&logo=unrealengine)</a>
+
+<br/>
+<p align="center">
+<a href="https://github.com/JanSeliv/Bomber">
+</a>
+<h3 align="center">Weapons, Interactions, Stealth and Combat System with AI  </h3>
+<p align="center">
+
+
 
 ## Table of Contents
-- [Weapons, Interaction and Steath Project](#Weapons,-Interaction-and-Steath-Project)
-- [Usage](#usage)
-- [Demo](#demo)
-- [License](#license)
-[Weapons, Interaction and Steath Project](#Weapons,-Interaction-and-Steath-Project)
+- [Weapons, Interaction and Steath Project](#Weapons,-Interaction-and-Stealth-Project)
+- [Souls-Like Combat Project](#Souls-Like-Combat-Project)
 
+# Weapons, Interactions, Stealth and Combat System with AI  
+Unreal Engine 5 Blueprints and C++ Project
 
 ## Project Overview  
 This project shows a modular setup for weapons, interactions, and stealth with AI. It draws ideas from action stealth games and focuses on clean structure, easy expansion, and smooth player control.  
@@ -54,4 +61,6 @@ https://www.rahulchandraportfolio.com/weapons-interaction-system
 - Interaction logic is inside one component so you can add new interactable objects by creating child classes  
 - AI uses Behaviour Trees which makes it easy to add new states, paths or reactions  
 - Movement uses clear layers that allow easy editing inside the animation blueprint
+
+</p>
 
