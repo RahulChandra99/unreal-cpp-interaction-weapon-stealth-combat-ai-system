@@ -1,10 +1,7 @@
 <a href="https://www.unrealengine.com/">![Unreal Engine](https://img.shields.io/badge/Unreal-5.5-dea309?style=flat&logo=unrealengine)</a>
+<a href="https://github.com/JanSeliv/Bomber/blob/main/LICENSE">![C++](https://img.shields.io/badge/Language-C++-brightgreen.svg)</a>
 
-<br/>
-<p align="center">
-<a href="https://github.com/JanSeliv/Bomber">
-</a>
-<h3 align="center">Weapons, Interactions, Stealth and Combat System with AI  </h3>
+
 <p align="center">
 
 
