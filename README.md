@@ -252,7 +252,7 @@ Focused on melee combat feel, ability driven gameplay, modular projectiles, and 
 
 | Platform | Engine | Tech | Team Size | Roles |
 | --- | --- | --- | --- | --- |
-| PC | Unreal Engine 5 | C++, Blueprints, GAS | Duo | Gameplay Programmer (Combat/Systems), VFX Artist (Niagara/VFX) |
+| PC | Unreal Engine 5 | C++, Blueprints, GAS | Duo | Gameplay Programmer (Combat/Systems) |
 
 ---
 
