@@ -104,13 +104,13 @@ Reusable weapon framework designed for quick expansion and tuning.
     <td align="center" width="50%">
       <b>Click the image to open the video in a new tab.</b><br/><br/>
       <a href="https://youtu.be/sCOE3vaOIU0" target="_blank" rel="noopener noreferrer">
-        <img src="https://github.com/user-attachments/assets/0b24485b-bc9f-49cd-be3a-6c4a0dd812f5" alt="Weapons Demo 1" width="360"/>
+        <img src="https://github.com/user-attachments/assets/0b24485b-bc9f-49cd-be3a-6c4a0dd812f5" alt="Weapons Demo 1" width="520"/>
       </a>
     </td>
     <td align="center" width="50%">
       <b>Click the image to open the video in a new tab.</b><br/><br/>
       <a href="https://www.youtube.com/watch?v=gcayfHLEJzI" target="_blank" rel="noopener noreferrer">
-        <img src="https://github.com/user-attachments/assets/2108ffe0-f230-49f9-aaf1-6114a8071839" alt="Weapons Demo 2" width="360"/>
+        <img src="https://github.com/user-attachments/assets/2108ffe0-f230-49f9-aaf1-6114a8071839" alt="Weapons Demo 2" width="520"/>
       </a>
     </td>
   </tr>
@@ -137,7 +137,7 @@ Modular interaction system focused on context actions and extension.
 </p>
 <p align="center">
   <a href="https://www.youtube.com/watch?v=RzZavYTFDSE" target="_blank" rel="noopener noreferrer">
-    <img src="https://github.com/user-attachments/assets/b50ab5dc-881c-41f6-bb09-7817727e159c9" alt="Interactions Demo" width="360"/>
+    <img src="https://github.com/user-attachments/assets/b50ab5dc-881c-41f6-bb09-7817727e159c9" alt="Interactions Demo" width="520"/>
   </a>
 </p>
 
