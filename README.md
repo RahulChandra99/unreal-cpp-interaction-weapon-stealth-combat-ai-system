@@ -14,7 +14,6 @@
   - [🔫 Weapons Modular System](#-weapons-modular-system)
   - [🧩 Interactions System Inspired by Hitman](#-interactions-system-inspired-by-hitman)
   - [👁️ Stealth System with AI](#-stealth-system-with-ai)
-  - [⚙️ Data Driven and Designer Friendly](#-data-driven-and-designer-friendly)
   - [📅 Changelog](#-changelog)
 - [⚔️ Souls Like Combat Project](#-souls-like-combat-project)
 
@@ -88,7 +87,7 @@ Built a modular ALS style locomotion system focused on responsiveness and clean 
 </p>
 <p align="center">
   <a href="https://youtu.be/i0rsDz0GuPA" target="_blank" rel="noopener noreferrer">
-    <img src="https://github.com/user-attachments/assets/4eddc091-8649-4187-a79c-8fa5acec11e9" alt="Locomotion Demo" width="460"/>
+    <img src="https://github.com/user-attachments/assets/44b01654-7111-4d7d-aa19-da9865c76b32" alt="Locomotion Demo" width="460"/>
   </a>
 </p>
 
@@ -113,13 +112,13 @@ Reusable weapon framework designed for quick expansion and tuning.
     <td align="center" width="50%">
       <b>Click the image to open the video in a new tab.</b><br/><br/>
       <a href="https://youtu.be/sCOE3vaOIU0" target="_blank" rel="noopener noreferrer">
-        <img src="https://github.com/user-attachments/assets/4eddc091-8649-4187-a79c-8fa5acec11e9" alt="Weapons Demo 1" width="300"/>
+        <img src="https://github.com/user-attachments/assets/0b24485b-bc9f-49cd-be3a-6c4a0dd812f5" alt="Weapons Demo 1" width="300"/>
       </a>
     </td>
     <td align="center" width="50%">
       <b>Click the image to open the video in a new tab.</b><br/><br/>
       <a href="https://www.youtube.com/watch?v=gcayfHLEJzI" target="_blank" rel="noopener noreferrer">
-        <img src="https://github.com/user-attachments/assets/4eddc091-8649-4187-a79c-8fa5acec11e9" alt="Weapons Demo 2" width="300"/>
+        <img src="https://github.com/user-attachments/assets/2108ffe0-f230-49f9-aaf1-6114a8071839" alt="Weapons Demo 2" width="300"/>
       </a>
     </td>
   </tr>
@@ -147,7 +146,7 @@ Modular interaction system focused on context actions and extension.
 </p>
 <p align="center">
   <a href="https://www.youtube.com/watch?v=RzZavYTFDSE" target="_blank" rel="noopener noreferrer">
-    <img src="https://github.com/user-attachments/assets/4eddc091-8649-4187-a79c-8fa5acec11e9" alt="Interactions Demo" width="460"/>
+    <img src="https://github.com/user-attachments/assets/b50ab5dc-881c-41f6-bb09-7817727e159c9" alt="Interactions Demo" width="460"/>
   </a>
 </p>
 
@@ -166,7 +165,7 @@ Readable stealth AI loop with clean state transitions.
 </p>
 <p align="center">
   <a href="https://www.youtube.com/watch?v=-o6jm9kiFkw" target="_blank" rel="noopener noreferrer">
-    <img src="https://github.com/user-attachments/assets/4eddc091-8649-4187-a79c-8fa5acec11e9" alt="Stealth AI Demo" width="460"/>
+    <img src="https://github.com/user-attachments/assets/2dffad36-5769-473e-ba45-11e977f37363" alt="Stealth AI Demo" width="460"/>
   </a>
 </p>
 
