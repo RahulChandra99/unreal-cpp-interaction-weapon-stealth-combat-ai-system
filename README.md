@@ -3,32 +3,22 @@
 
 <p align="center"></p>
 
-<!-- ADD A HERO IMAGE OR SHORT GAMEPLAY GIF HERE -->
-<!-- Example:
-<p align="center">
-  <img src="YOUR_IMAGE_OR_GIF_URL" width="900"/>
-</p>
--->
-
 ## Table of Contents
-- [Weapons, Interactions, Stealth and Combat System with AI](#weapons-interactions-stealth-and-combat-system-with-ai)
+- [Weapons, Interactions, Stealth with AI](#weapons-interactions-stealth-with-ai)
   - [Project Overview](#project-overview)
-  - [Gameplay Trailer](#gameplay-trailer)
+  - [Gameplay Click Image](#gameplay-click-image)
   - [Project Details](#project-details)
-  - [Responsibilities](#responsibilities)
   - [Project Intro](#project-intro)
   - [Discovering the Core Gameplay Loop](#discovering-the-core-gameplay-loop)
-  - [Core Goals](#core-goals)
   - [Advanced Locomotion System](#advanced-locomotion-system)
   - [Weapons Modular System](#weapons-modular-system)
   - [Interactions System Inspired by Hitman](#interactions-system-inspired-by-hitman)
   - [Stealth System with AI](#stealth-system-with-ai)
   - [Data Driven and Designer Friendly](#data-driven-and-designer-friendly)
-  - [Summary](#summary)
-  - [Get in Touch](#get-in-touch)
+  - [📅 Changelog](#-changelog)
 - [Souls Like Combat Project](#souls-like-combat-project)
 
-# Weapons, Interactions, Stealth and Combat System with AI
+# Weapons, Interactions, Stealth with AI
 
 This project is a third person stealth action gameplay framework inspired by Hitman, focused on stylish combat, readable stealth, and systemic interactions.  
 It combines modular weapon systems, ALS style procedural locomotion, and AI driven stealth gameplay into a single extendable foundation.
@@ -47,53 +37,24 @@ I built this project as a solo developer with a strong focus on clean architectu
 
 ---
 
-## Gameplay Trailer
+## Gameplay Click Image
 
-<!-- OPTION A: YOUTUBE THUMBNAIL LINK -->
-[![Watch Demo](https://github.com/user-attachments/assets/4eddc091-8649-4187-a79c-8fa5acec11e9)](https://www.youtube.com/watch?v=21OzrVktwzA)
-
-<!-- OPTION B: ADD ANOTHER VIDEO OR GIF BELOW -->
-<!-- Add a second thumbnail, GIF, or short clip here -->
+<p align="center">
+  <b>Click the image to open the video in a new tab.</b>
+</p>
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=21OzrVktwzA" target="_blank" rel="noopener noreferrer">
+    <img src="https://github.com/user-attachments/assets/4eddc091-8649-4187-a79c-8fa5acec11e9" alt="Gameplay Demo" width="520"/>
+  </a>
+</p>
 
 ---
 
 ## Project Details
 
-Platform  
-PC  
-
-Engine  
-Unreal Engine 5  
-
-Duration  
-Three weeks  
-
-Team Size  
-Solo  
-
-Roles  
-Gameplay Programmer, Systems Designer, AI Programmer  
-
-Repository  
-Add GitHub link here  
-
----
-
-## Responsibilities
-
-Designed and implemented a complete stealth action gameplay framework from scratch.  
-
-Built modular ALS style locomotion covering idle, walk, run, crouch, lean, start, stop, pivot, turn in place, and jump.  
-
-Designed and implemented modular weapon systems using Data Assets for tuning stats, recoil, spread, ammo type, and fire rate.  
-
-Programmed AI perception, patrol behavior, distraction logic, and stealth takedown systems.  
-
-Created a Hitman inspired interaction framework supporting doors, disguises, pickups, dragging bodies, and radial actions.  
-
-Designed and implemented UI including crosshair, compass, weapon UI, radial wheels, and context prompts.  
-
-Exposed key systems to Blueprints and Data Assets for fast iteration and designer friendly workflows.  
+| Platform | Engine | Duration | Team Size | Roles |
+| --- | --- | --- | --- | --- |
+| PC | Unreal Engine 5 | Three weeks | Solo | Gameplay Programmer, Systems Designer, AI Programmer |
 
 ---
 
@@ -108,13 +69,6 @@ The project consists of a few key components:
 - Interaction system inspired by Hitman, doors, disguises, pickup, drag body, radial actions
 - Stealth AI with perception, patrol, distraction, and takedown gameplay loops
 - UI systems for crosshair, compass, weapon UI, radial wheels, and context prompts
-
-<!-- ADD A QUICK FEATURE MONTAGE GIF HERE -->
-<!-- Example:
-<p align="center">
-  <img src="YOUR_MONTAGE_GIF_URL" width="900"/>
-</p>
--->
 
 ---
 
@@ -131,35 +85,18 @@ Key questions that guided the design:
 
 ---
 
-## Core Goals
-
-### Movement and Animation
-- Fluid locomotion supporting stealth pacing, combat pacing, and smooth state transitions.
-- Clean animation blending when weapons, stances, or movement modes change.
-- Reliable start stop pivots and turn in place for grounded movement.
-
-### Combat and Weapons
-- Data driven weapons that are easy to add, balance, and extend.
-- Weapon UI reacts to accuracy, recoil, and movement state.
-- Throwables and projectiles feel consistent and readable.
-
-### Interactions Inspired by Hitman
-- A unified interaction framework usable by any interactable actor.
-- Context based prompts plus radial selection for multiple actions.
-- Smooth workflows for disguise, pickup, door usage, and body handling.
-
-### Stealth AI
-- AI detection using sight and hearing with readable escalation.
-- Distraction system that creates stealth opportunities.
-- Investigation and return to patrol flow that resets reliably.
-
----
-
 ## Advanced Locomotion System
 
 Built a modular ALS style locomotion system focused on responsiveness, clean transitions, and scalability.
 
-<!-- ADD LOCOMOTION DEMO VIDEO OR GIF HERE -->
+<p align="center">
+  <b>Click the image to open the video in a new tab.</b>
+</p>
+<p align="center">
+  <a href="https://youtu.be/i0rsDz0GuPA" target="_blank" rel="noopener noreferrer">
+    <img src="https://github.com/user-attachments/assets/4eddc091-8649-4187-a79c-8fa5acec11e9" alt="Locomotion Demo" width="520"/>
+  </a>
+</p>
 
 ### Movement System
 - ALS style movement state coverage including idle, walk, run, crouch, lean, start, stop, pivot, turn in place, and jump.
@@ -181,7 +118,23 @@ Built a modular ALS style locomotion system focused on responsiveness, clean tra
 
 Designed as a reusable and scalable weapon framework so new weapons can be added with minimal code changes.
 
-<!-- ADD WEAPON SHOOTING VIDEO OR GIF HERE -->
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <b>Click the image to open the video in a new tab.</b><br/><br/>
+      <a href="https://youtu.be/sCOE3vaOIU0" target="_blank" rel="noopener noreferrer">
+        <img src="https://github.com/user-attachments/assets/4eddc091-8649-4187-a79c-8fa5acec11e9" alt="Weapons Demo 1" width="360"/>
+      </a>
+    </td>
+    <td align="center" width="50%">
+      <b>Click the image to open the video in a new tab.</b><br/><br/>
+      <a href="https://www.youtube.com/watch?v=gcayfHLEJzI" target="_blank" rel="noopener noreferrer">
+        <img src="https://github.com/user-attachments/assets/4eddc091-8649-4187-a79c-8fa5acec11e9" alt="Weapons Demo 2" width="360"/>
+      </a>
+    </td>
+  </tr>
+</table>
+
 
 ### Modular Weapon Framework
 - Data Assets define weapon stats, fire rate, recoil, spread, ammo type, and tuning values.
@@ -215,8 +168,14 @@ Designed as a reusable and scalable weapon framework so new weapons can be added
 
 A key pillar was making interaction feel natural, context aware, and extendable.
 
-<!-- ADD INTERACTIONS VIDEO OR GIF HERE -->
-<!-- Consider showing doors, disguise, radial wheel, body drag, pickup -->
+<p align="center">
+  <b>Click the image to open the video in a new tab.</b>
+</p>
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=RzZavYTFDSE" target="_blank" rel="noopener noreferrer">
+    <img src="https://github.com/user-attachments/assets/4eddc091-8649-4187-a79c-8fa5acec11e9" alt="Interactions Demo" width="520"/>
+  </a>
+</p>
 
 ### Interaction Framework
 - Modular PlayerInteractionComponent built in C++ and Blueprints.
@@ -258,8 +217,14 @@ A key pillar was making interaction feel natural, context aware, and extendable.
 
 Designed to create readable stealth loops with smooth escalation and reliable reset.
 
-<!-- ADD AI STEALTH VIDEO OR GIF HERE -->
-<!-- Consider showing detection, distraction, investigate, chase, return to patrol -->
+<p align="center">
+  <b>Click the image to open the video in a new tab.</b>
+</p>
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=-o6jm9kiFkw" target="_blank" rel="noopener noreferrer">
+    <img src="https://github.com/user-attachments/assets/4eddc091-8649-4187-a79c-8fa5acec11e9" alt="Stealth AI Demo" width="520"/>
+  </a>
+</p>
 
 ### AI Perception and Detection
 - AI Perception with sight and hearing senses.
@@ -295,40 +260,42 @@ A major focus of this project was iteration speed and clarity.
 - Systems are fully exposed to Blueprints for fast iteration.
 - Codebase is well commented for clarity and maintenance.
 
-<!-- ADD A SCREENSHOT OF DATA ASSETS OR EDITOR SETUP HERE -->
+<p align="center">
+  <b>Click the image to open the video in a new tab.</b>
+</p>
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=21OzrVktwzA" target="_blank" rel="noopener noreferrer">
+    <img src="https://github.com/user-attachments/assets/4eddc091-8649-4187-a79c-8fa5acec11e9" alt="Data Driven Demo" width="520"/>
+  </a>
+</p>
 
 ---
 
-## Summary
+## 📅 Changelog
 
-This project demonstrates a scalable stealth action framework in Unreal Engine 5, combining ALS style locomotion, modular weapons, Hitman inspired interactions, and stealth AI. The focus is clean architecture and extendable systems so future features can be added without rewriting the foundation.
+#### `2026-01-21:`
+- Added README structure with sectioned breakdown for locomotion, weapons, interactions, and stealth AI.
+- Updated all video thumbnails to open in a new tab, and reduced thumbnail width for cleaner layout.
 
----
+#### `2026-01-18:`
+- Implemented initial stealth AI loop using AI Perception with sight and hearing.
+- Added distraction flow with throwable objects, investigation, chase, and return to patrol.
 
-## Get in Touch
+#### `2026-01-16:`
+- Implemented Hitman inspired interaction system including doors, pickup, and radial actions.
+- Added context based prompts with smooth UI transitions.
 
-Reach out via email, connect on LinkedIn, or check the code on GitHub.
+#### `2026-01-13:`
+- Implemented modular weapon framework using Data Assets.
+- Added dynamic crosshair reacting to recoil, accuracy, and movement state.
+- Added projectile throw support with predictable arc behavior.
 
-LinkedIn  
-Add link  
-
-GitHub  
-Add link  
-
-Email  
-Add email  
+#### `2026-01-10:`
+- Implemented ALS style locomotion base including movement states and animation layering.
+- Added footstep audio synced to surface detection.
 
 ---
 
 ## Souls Like Combat Project
 
 Coming soon.
-
-<!-- When ready, add:
-1) a short overview paragraph
-2) a trailer section
-3) project details table
-4) responsibilities
-5) features
-6) screenshots and gifs
--->
