@@ -5,8 +5,6 @@
   - [Project Overview](#project-overview)
   - [Gameplay](#gameplay)
   - [Project Details](#project-details)
-  - [Project Intro](#project-intro)
-  - [Core Gameplay Loop](#core-gameplay-loop)
   - [Advanced Locomotion System](#advanced-locomotion-system)
   - [Weapons Modular System](#weapons-modular-system)
   - [Interactions System Inspired by Hitman](#interactions-system-inspired-by-hitman)
@@ -63,26 +61,13 @@ Built solo with a focus on clean architecture and scalable gameplay systems.
 
 ---
 
-## Project Intro
-Built as a Hitman inspired stealth action framework with modular systems that work together cleanly.  
-The challenge was integrating locomotion, weapons, interactions, UI, and stealth AI without tight coupling.  
-Solved using Actor Components, Interfaces, Data Assets, and event driven flow.
+## Key systems:
 
-Key systems:
 - ALS style locomotion
 - Modular weapons (Data Assets)
 - Hitman inspired interactions (doors, disguise, radial actions, body drag)
 - Stealth AI (perception, patrol, distraction, takedown)
 - UI (crosshair, compass, prompts, radial wheels)
-
----
-
-## Core Gameplay Loop
-Designed to support multiple stealth playstyles with clear player control:
-- Movement and pacing
-- Distinct weapon handling
-- AI that reacts fairly and predictably
-- Context interactions without UI clutter
 
 ---
 
