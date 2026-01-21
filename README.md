@@ -143,7 +143,6 @@ Reusable weapon framework designed for quick expansion and tuning.
 - Projectile movement plus trajectory preview.
 - Overlap based pickup plus prompts.
 
----
 
 ## Interactions System Inspired by Hitman
 Modular interaction system focused on context actions and extension.
@@ -153,7 +152,7 @@ Modular interaction system focused on context actions and extension.
 </p>
 <p align="center">
   <a href="https://www.youtube.com/watch?v=RzZavYTFDSE" target="_blank" rel="noopener noreferrer">
-    <img src="https://github.com/user-attachments/assets/b50ab5dc-881c-41f6-bb09-7817727e159c9" alt="Interactions Demo" width="520"/>
+    <img src="https://github.com/user-attachments/assets/b50ab5dc-881c-41f6-bb09-7817727e159c9" alt="Interactions Demo" width="360"/>
   </a>
 </p>
 
@@ -241,7 +240,7 @@ Focused on melee combat feel, ability driven gameplay, modular projectiles, and 
 </p>
 <p align="center">
   <a href="https://www.youtube.com/watch?v=1wI59nvk9WY" target="_blank" rel="noopener noreferrer">
-    <img src="[YOUR_SOULS_THUMBNAIL_IMAGE](https://github.com/user-attachments/assets/c4b04593-a3e8-45b7-87bf-4bdb82668447)" alt="Souls Gameplay Demo" width="520"/>
+    <img src="https://github.com/user-attachments/assets/c4b04593-a3e8-45b7-87bf-4bdb82668447" alt="Souls Gameplay Demo" width="520"/>
   </a>
 </p>
 
