@@ -4,21 +4,21 @@
 <p align="center"></p>
 
 ## Table of Contents
-- [Weapons, Interactions, Stealth with AI](#weapons-interactions-stealth-with-ai)
-  - [Project Overview](#project-overview)
-  - [Gameplay](#gameplay)
-  - [Project Details](#project-details)
-  - [Project Intro](#project-intro)
-  - [Core Gameplay Loop](#core-gameplay-loop)
-  - [Advanced Locomotion System](#advanced-locomotion-system)
-  - [Weapons Modular System](#weapons-modular-system)
-  - [Interactions System Inspired by Hitman](#interactions-system-inspired-by-hitman)
-  - [Stealth System with AI](#stealth-system-with-ai)
-  - [Data Driven and Designer Friendly](#data-driven-and-designer-friendly)
+- [🕵️ Weapons, Interactions, Stealth with AI](#-weapons-interactions-stealth-with-ai)
+  - [📌 Project Overview](#-project-overview)
+  - [🎬 Gameplay](#-gameplay)
+  - [🧾 Project Details](#-project-details)
+  - [🧠 Project Intro](#-project-intro)
+  - [🔁 Core Gameplay Loop](#-core-gameplay-loop)
+  - [🏃 Advanced Locomotion System](#-advanced-locomotion-system)
+  - [🔫 Weapons Modular System](#-weapons-modular-system)
+  - [🧩 Interactions System Inspired by Hitman](#-interactions-system-inspired-by-hitman)
+  - [👁️ Stealth System with AI](#-stealth-system-with-ai)
+  - [⚙️ Data Driven and Designer Friendly](#-data-driven-and-designer-friendly)
   - [📅 Changelog](#-changelog)
-- [Souls Like Combat Project](#souls-like-combat-project)
+- [⚔️ Souls Like Combat Project](#-souls-like-combat-project)
 
-# Weapons, Interactions, Stealth with AI
+# 🕵️ Weapons, Interactions, Stealth with AI
 
 This project is a third person stealth action framework inspired by Hitman.  
 It combines modular weapons, ALS style locomotion, and stealth AI into one extendable foundation.  
@@ -27,7 +27,7 @@ Built solo with a focus on clean architecture and scalable gameplay systems.
 
 ---
 
-## Project Overview
+## 📌 Project Overview
 - Hitman inspired stealth, interactions, and context actions.
 - Modular weapons + ALS style locomotion for responsive movement and combat.
 - Data driven tuning via Data Assets (minimal hardcoding).
@@ -36,7 +36,7 @@ Built solo with a focus on clean architecture and scalable gameplay systems.
 
 ---
 
-## Gameplay
+## 🎬 Gameplay
 
 <p align="center">
   <b>Click the image to open the video in a new tab.</b>
@@ -49,7 +49,7 @@ Built solo with a focus on clean architecture and scalable gameplay systems.
 
 ---
 
-## Project Details
+## 🧾 Project Details
 
 | Platform | Engine | Duration | Team Size | Roles |
 | --- | --- | --- | --- | --- |
@@ -57,7 +57,7 @@ Built solo with a focus on clean architecture and scalable gameplay systems.
 
 ---
 
-## Project Intro
+## 🧠 Project Intro
 Built as a Hitman inspired stealth action framework with modular systems that work together cleanly.  
 The challenge was integrating locomotion, weapons, interactions, UI, and stealth AI without tight coupling.  
 Solved using Actor Components, Interfaces, Data Assets, and event driven flow.
@@ -71,7 +71,7 @@ Key systems:
 
 ---
 
-## Core Gameplay Loop
+## 🔁 Core Gameplay Loop
 Designed to support multiple stealth playstyles with clear player control:
 - Movement and pacing
 - Distinct weapon handling
@@ -80,7 +80,7 @@ Designed to support multiple stealth playstyles with clear player control:
 
 ---
 
-## Advanced Locomotion System
+## 🏃 Advanced Locomotion System
 Built a modular ALS style locomotion system focused on responsiveness and clean transitions.
 
 <p align="center">
@@ -105,7 +105,7 @@ Built a modular ALS style locomotion system focused on responsiveness and clean 
 
 ---
 
-## Weapons Modular System
+## 🔫 Weapons Modular System
 Reusable weapon framework designed for quick expansion and tuning.
 
 <table>
@@ -139,7 +139,7 @@ Reusable weapon framework designed for quick expansion and tuning.
 
 ---
 
-## Interactions System Inspired by Hitman
+## 🧩 Interactions System Inspired by Hitman
 Modular interaction system focused on context actions and extension.
 
 <p align="center">
@@ -158,7 +158,7 @@ Modular interaction system focused on context actions and extension.
 
 ---
 
-## Stealth System with AI
+## 👁️ Stealth System with AI
 Readable stealth AI loop with clean state transitions.
 
 <p align="center">
@@ -177,7 +177,7 @@ Readable stealth AI loop with clean state transitions.
 
 ---
 
-## Data Driven and Designer Friendly
+## ⚙️ Data Driven and Designer Friendly
 Built for fast iteration and tuning.
 
 - Weapon stats, AI values, and interaction rules via Data Assets
@@ -251,5 +251,5 @@ Built for fast iteration and tuning.
 
 ---
 
-## Souls Like Combat Project
+## ⚔️ Souls Like Combat Project
 Coming soon.
