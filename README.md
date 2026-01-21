@@ -1,16 +1,15 @@
 <p align="center"></p>
 
 ## Table of Contents
-- [Weapons, Interactions, Stealth with AI](#weapons-interactions-stealth-with-ai)
+- [Weapons and Interaction System](#weapons-interactions-stealth-with-ai)
   - [Project Overview](#project-overview)
   - [Gameplay](#gameplay)
   - [Project Details](#project-details)
   - [Advanced Locomotion System](#advanced-locomotion-system)
   - [Weapons Modular System](#weapons-modular-system)
   - [Interactions System Inspired by Hitman](#interactions-system-inspired-by-hitman)
-  - [Stealth System with AI](#stealth-system-with-ai)
   - [Changelog](#changelog)
-- [Souls Like Combat Project](#souls-like-combat-project)
+- [Souls Like Combat Mechanics](#souls-like-combat-project)
   - [Project Overview](#souls-project-overview)
   - [Gameplay](#souls-gameplay)
   - [Project Details](#souls-project-details)
@@ -21,6 +20,9 @@
   - [Gameplay Abilities (GAS)](#souls-gameplay-abilities-gas)
   - [UI Feedback](#souls-ui-feedback)
   - [Changelog](#souls-changelog)
+- [Smart Enemy Combat and Stealth System with AI](#smart-enemy-combat-and-stealth-system-with-ai)
+
+
 
 # Weapons, Interactions, Stealth with AI
 
@@ -145,25 +147,6 @@ Modular interaction system focused on context actions and extension.
 - Context prompts plus radial action wheel
 - Doors, pickups, disguise, body drag
 - Animation driven actions (montages)
-
----
-
-## Stealth System with AI
-Readable stealth AI loop with clean state transitions.
-
-<p align="center">
-  <b>Click the image to open the video in a new tab.</b>
-</p>
-<p align="center">
-  <a href="https://www.youtube.com/watch?v=-o6jm9kiFkw" target="_blank" rel="noopener noreferrer">
-    <img src="https://github.com/user-attachments/assets/2dffad36-5769-473e-ba45-11e977f37363" alt="Stealth AI Demo" width="520"/>
-  </a>
-</p>
-
-- AI Perception (sight plus hearing)
-- Distraction system (noise events to investigation)
-- Patrol to investigate to chase to return
-- Takedowns (montages plus motion warping)
 
 ---
 
@@ -361,4 +344,21 @@ I handled GAS architecture, combat systems, AI combat hooks, and UI logic. The V
 - Polish: combat readability, UI states (stamina low, cooldown ready).
 - Documentation cleanup: tags, effects naming, key classes.
 
+---
 
+## Smart Enemy Combat and Stealth System with AI
+Readable stealth AI loop with clean state transitions.
+
+<p align="center">
+  <b>Click the image to open the video in a new tab.</b>
+</p>
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=-o6jm9kiFkw" target="_blank" rel="noopener noreferrer">
+    <img src="https://github.com/user-attachments/assets/2dffad36-5769-473e-ba45-11e977f37363" alt="Stealth AI Demo" width="520"/>
+  </a>
+</p>
+
+- AI Perception (sight plus hearing)
+- Distraction system (noise events to investigation)
+- Patrol to investigate to chase to return
+- Takedowns (montages plus motion warping)
