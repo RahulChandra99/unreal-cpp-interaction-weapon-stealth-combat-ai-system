@@ -10,12 +10,14 @@
 #include "CombatProjectCharacter.generated.h"
 
 class AProjectileBase;
-class UPhysicsConstraintComponent;
 class UCombatPlayerAnimInstance;
 class USpringArmComponent;
 class UCameraComponent;
 class UInputMappingContext;
 class UInputAction;
+class UPhysicsHandleComponent;
+class AEnemy;
+class AWeapon;
 struct FInputActionValue;
 
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
@@ -25,54 +27,68 @@ class ACombatProjectCharacter : public ACharacter, public IAbilitySystemInterfac
 {
 	GENERATED_BODY()
 
-	/** Camera boom positioning the camera behind the character */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
-	USpringArmComponent* CameraBoom;
-
-	/** Follow camera */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
-	UCameraComponent* FollowCamera;
-	
-	/** MappingContext */
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
-	UInputMappingContext* DefaultMappingContext;
-
-	/** Jump Input Action */
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
-	UInputAction* JumpAction;
-
-	/** Move Input Action */
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
-	UInputAction* MoveAction;
-
-	/** Look Input Action */
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
-	UInputAction* LookAction;
-
 public:
 	ACombatProjectCharacter();
 
 	virtual void BeginPlay() override;
-
 	virtual void Tick(float DeltaSeconds) override;
-	
-	UPROPERTY(EditAnywhere,BlueprintReadWrite)
-	bool bIsCrouching;
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="AbilitySystem")
-	UAbilitySystemComponent* AbilitySystemComponent;
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="AbilitySystem")
-	class UBasicAttributeSet* BasicAttributeSet;
 
 	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Aiming")
-	float AimDirection;
-	
+	virtual void PossessedBy(AController* NewController) override;
+	virtual void OnRep_PlayerState() override;
+
+	virtual void NotifyControllerChanged() override;
+	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+	// Camera getters
+	FORCEINLINE USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
+	FORCEINLINE UCameraComponent* GetFollowCamera() const { return FollowCamera; }
+
+	// Grab
+	UFUNCTION(BlueprintCallable)
+	void GrabEnemy(AEnemy* EnemyRef);
+
+	UFUNCTION(BlueprintCallable)
+	void ReleaseEnemy();
+
+	// Combat
+	UFUNCTION(BlueprintCallable)
+	void ThrowAxeAtTarget(AActor* Target);
+
+	UFUNCTION(BlueprintCallable)
+	void DestoryGun(AWeapon* EquippedWeapon);
+
+	UFUNCTION(BlueprintCallable)
+	void SpawnWeapon(AWeapon* EquippedWeapon);
+
+	// Grenade
+	UFUNCTION()
+	void PredictGrenadePath();
+
+	UFUNCTION(BlueprintCallable)
+	void ThrowGrenade(TSubclassOf<AProjectileBase> GrenadeActor);
+
+	// Sense
+	UFUNCTION(BlueprintCallable)
+	void ActivateSenseVision(bool bEnable);
+
+	// Public variables
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	bool bIsCrouching = false;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="AbilitySystem")
+	UAbilitySystemComponent* AbilitySystemComponent = nullptr;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="AbilitySystem")
+	class UBasicAttributeSet* BasicAttributeSet = nullptr;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category="Aiming")
+	float AimDirection = 0.0f;
+
 	UPROPERTY()
 	TMap<FName, int32> SavedCurrentAmmoMap;
-    
+
 	UPROPERTY()
 	TMap<FName, int32> SavedReserveAmmoMap;
 
@@ -85,45 +101,66 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TSubclassOf<AProjectileBase> AxeProjectileClass;
 
-protected:
+	UPROPERTY(EditDefaultsOnly, Category="Grenade")
+	float ThrowSpeed = 1200.f;
 
-	/** Called for movement input */
-	void Move(const FInputActionValue& Value);
-
-	/** Called for looking input */
-	void Look(const FInputActionValue& Value);
+	UPROPERTY(EditDefaultsOnly, Category="Grenade")
+	float ThrowScale = 1.f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	UCombatPlayerAnimInstance* PlayerAnimInstance;
+	bool bIsGrenadeAiming = false;
 
-	UPROPERTY(BlueprintReadWrite)
-	bool bIsWheelOpen;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Ability")
+	float SenseRadius = 2000000.f;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="AbilitySystem")
-	EGameplayEffectReplicationMode AscReplicationMode = EGameplayEffectReplicationMode::Mixed;
-
-	virtual void PossessedBy(AController* NewController) override;
-
-	virtual void OnRep_PlayerState() override;
-
-	UFUNCTION(BlueprintImplementableEvent)
-	void CalculateAimDirection();
-
-	// Grab input
-	UFUNCTION(BlueprintCallable)
-	void GrabEnemy(AEnemy* EnemyRef);
-
-	UFUNCTION(BlueprintCallable)
-	void ReleaseEnemy();
+protected:
+	// Input handlers
+	void Move(const FInputActionValue& Value);
+	void Look(const FInputActionValue& Value);
 
 	// Helper
 	void UpdateGrabbedLocation(float DeltaTime);
 
 	UFUNCTION(BlueprintCallable)
-	void ThrowAxeAtTarget(AActor* Target);
+	bool IsEnemyBehindTarget(AActor* TargetActor);
 
+	UFUNCTION(BlueprintImplementableEvent)
+	void CalculateAimDirection();
+
+	// Components
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Camera, meta=(AllowPrivateAccess="true"))
+	USpringArmComponent* CameraBoom = nullptr;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Camera, meta=(AllowPrivateAccess="true"))
+	UCameraComponent* FollowCamera = nullptr;
+
+	// Input assets
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Input, meta=(AllowPrivateAccess="true"))
+	UInputMappingContext* DefaultMappingContext = nullptr;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Input, meta=(AllowPrivateAccess="true"))
+	UInputAction* JumpAction = nullptr;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Input, meta=(AllowPrivateAccess="true"))
+	UInputAction* MoveAction = nullptr;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Input, meta=(AllowPrivateAccess="true"))
+	UInputAction* LookAction = nullptr;
+
+	// Anim
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UCombatPlayerAnimInstance* PlayerAnimInstance = nullptr;
+
+	UPROPERTY(BlueprintReadWrite)
+	bool bIsWheelOpen = false;
+
+	// GAS replication
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="AbilitySystem")
+	EGameplayEffectReplicationMode AscReplicationMode = EGameplayEffectReplicationMode::Mixed;
+
+	// Grab data
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Grab")
-	class UPhysicsHandleComponent* PhysicsHandle;
+	UPhysicsHandleComponent* PhysicsHandle = nullptr;
 
 	UPROPERTY(EditAnywhere, Category="Grab")
 	float HoldDistance = 150.f;
@@ -131,55 +168,6 @@ protected:
 	UPROPERTY(EditAnywhere, Category="Grab")
 	FName GrabBoneName = "pelvis";
 
+	UPROPERTY()
 	USkeletalMeshComponent* GrabbedMesh = nullptr;
-	
-	
-	
-
-
-protected:
-
-	virtual void NotifyControllerChanged() override;
-
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-	
-	UFUNCTION(BlueprintCallable)
-	bool IsEnemyBehindTarget(AActor* TargetActor);
-
-public:
-	/** Returns CameraBoom subobject **/
-	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
-	/** Returns FollowCamera subobject **/
-	FORCEINLINE class UCameraComponent* GetFollowCamera() const { return FollowCamera; }
-
-	UFUNCTION(BlueprintCallable)
-	void DestoryGun(class AWeapon* EquippedWeapon);
-
-	UFUNCTION(BlueprintCallable)
-	void SpawnWeapon( AWeapon* EquippedWeapon);
-
-	UPROPERTY(EditDefaultsOnly, Category = "Grenade")
-	float ThrowSpeed = 1200.f;
-
-	UPROPERTY(EditDefaultsOnly, Category = "Grenade")
-	float ThrowScale = 1.f;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	bool bIsGrenadeAiming;
-	
-	UFUNCTION()
-	void PredictGrenadePath();
-
-	UFUNCTION(BlueprintCallable)
-	void ThrowGrenade(TSubclassOf<AProjectileBase> GrenadeActor);
-
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Ability")
-	float SenseRadius = 2000000.f;
-	
-	UFUNCTION(BlueprintCallable)
-	void ActivateSenseVision(bool bEnable);
-
-	
 };
-
