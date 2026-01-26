@@ -1,18 +1,15 @@
 <p align="center"></p>
 
 ## Table of Contents
-- [Weapons, Interactions, Stealth with AI](#weapons-interactions-stealth-with-ai)
+- [Weapons and Interaction System](#weapons-interactions-stealth-with-ai)
   - [Project Overview](#project-overview)
   - [Gameplay](#gameplay)
   - [Project Details](#project-details)
-  - [Project Intro](#project-intro)
-  - [Core Gameplay Loop](#core-gameplay-loop)
   - [Advanced Locomotion System](#advanced-locomotion-system)
   - [Weapons Modular System](#weapons-modular-system)
   - [Interactions System Inspired by Hitman](#interactions-system-inspired-by-hitman)
-  - [Stealth System with AI](#stealth-system-with-ai)
   - [Changelog](#changelog)
-- [Souls Like Combat Project](#souls-like-combat-project)
+- [Souls Like Combat Mechanics](#souls-like-combat-project)
   - [Project Overview](#souls-project-overview)
   - [Gameplay](#souls-gameplay)
   - [Project Details](#souls-project-details)
@@ -23,6 +20,9 @@
   - [Gameplay Abilities (GAS)](#souls-gameplay-abilities-gas)
   - [UI Feedback](#souls-ui-feedback)
   - [Changelog](#souls-changelog)
+- [Smart Enemy Combat and Stealth System with AI](#smart-enemy-combat-and-stealth-system-with-ai)
+
+
 
 # Weapons, Interactions, Stealth with AI
 
@@ -63,26 +63,13 @@ Built solo with a focus on clean architecture and scalable gameplay systems.
 
 ---
 
-## Project Intro
-Built as a Hitman inspired stealth action framework with modular systems that work together cleanly.  
-The challenge was integrating locomotion, weapons, interactions, UI, and stealth AI without tight coupling.  
-Solved using Actor Components, Interfaces, Data Assets, and event driven flow.
+## Key systems:
 
-Key systems:
 - ALS style locomotion
 - Modular weapons (Data Assets)
 - Hitman inspired interactions (doors, disguise, radial actions, body drag)
 - Stealth AI (perception, patrol, distraction, takedown)
 - UI (crosshair, compass, prompts, radial wheels)
-
----
-
-## Core Gameplay Loop
-Designed to support multiple stealth playstyles with clear player control:
-- Movement and pacing
-- Distinct weapon handling
-- AI that reacts fairly and predictably
-- Context interactions without UI clutter
 
 ---
 
@@ -119,13 +106,13 @@ Reusable weapon framework designed for quick expansion and tuning.
     <td align="center" width="50%">
       <b>Click the image to open the video in a new tab.</b><br/><br/>
       <a href="https://youtu.be/sCOE3vaOIU0" target="_blank" rel="noopener noreferrer">
-        <img src="https://github.com/user-attachments/assets/0b24485b-bc9f-49cd-be3a-6c4a0dd812f5" alt="Weapons Demo 1" width="360"/>
+        <img src="https://github.com/user-attachments/assets/0b24485b-bc9f-49cd-be3a-6c4a0dd812f5" alt="Weapons Demo 1" width="520"/>
       </a>
     </td>
     <td align="center" width="50%">
       <b>Click the image to open the video in a new tab.</b><br/><br/>
       <a href="https://www.youtube.com/watch?v=gcayfHLEJzI" target="_blank" rel="noopener noreferrer">
-        <img src="https://github.com/user-attachments/assets/2108ffe0-f230-49f9-aaf1-6114a8071839" alt="Weapons Demo 2" width="360"/>
+        <img src="https://github.com/user-attachments/assets/2108ffe0-f230-49f9-aaf1-6114a8071839" alt="Weapons Demo 2" width="520"/>
       </a>
     </td>
   </tr>
@@ -152,7 +139,7 @@ Modular interaction system focused on context actions and extension.
 </p>
 <p align="center">
   <a href="https://www.youtube.com/watch?v=RzZavYTFDSE" target="_blank" rel="noopener noreferrer">
-    <img src="https://github.com/user-attachments/assets/b50ab5dc-881c-41f6-bb09-7817727e159c9" alt="Interactions Demo" width="360"/>
+    <img src="https://github.com/user-attachments/assets/b50ab5dc-881c-41f6-bb09-7817727e159c9" alt="Interactions Demo" width="520"/>
   </a>
 </p>
 
@@ -160,25 +147,6 @@ Modular interaction system focused on context actions and extension.
 - Context prompts plus radial action wheel
 - Doors, pickups, disguise, body drag
 - Animation driven actions (montages)
-
----
-
-## Stealth System with AI
-Readable stealth AI loop with clean state transitions.
-
-<p align="center">
-  <b>Click the image to open the video in a new tab.</b>
-</p>
-<p align="center">
-  <a href="https://www.youtube.com/watch?v=-o6jm9kiFkw" target="_blank" rel="noopener noreferrer">
-    <img src="https://github.com/user-attachments/assets/2dffad36-5769-473e-ba45-11e977f37363" alt="Stealth AI Demo" width="520"/>
-  </a>
-</p>
-
-- AI Perception (sight plus hearing)
-- Distraction system (noise events to investigation)
-- Patrol to investigate to chase to return
-- Takedowns (montages plus motion warping)
 
 ---
 
@@ -376,4 +344,21 @@ I handled GAS architecture, combat systems, AI combat hooks, and UI logic. The V
 - Polish: combat readability, UI states (stamina low, cooldown ready).
 - Documentation cleanup: tags, effects naming, key classes.
 
+---
 
+## Smart Enemy Combat and Stealth System with AI
+Readable stealth AI loop with clean state transitions.
+
+<p align="center">
+  <b>Click the image to open the video in a new tab.</b>
+</p>
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=-o6jm9kiFkw" target="_blank" rel="noopener noreferrer">
+    <img src="https://github.com/user-attachments/assets/2dffad36-5769-473e-ba45-11e977f37363" alt="Stealth AI Demo" width="520"/>
+  </a>
+</p>
+
+- AI Perception (sight plus hearing)
+- Distraction system (noise events to investigation)
+- Patrol to investigate to chase to return
+- Takedowns (montages plus motion warping)
