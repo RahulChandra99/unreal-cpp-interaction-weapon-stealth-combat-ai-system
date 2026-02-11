@@ -1,4 +1,4 @@
-<p align="center"></p>
+<p align="center">Weapons & Interactions, Stealth based System with AI(multiplayer integration)</p>
 
 ## Table of Contents
 - [Weapons and Interaction System](#weapons-interactions-stealth-with-ai)
