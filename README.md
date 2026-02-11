@@ -1,8 +1,7 @@
-<p align="center">Weapons & Interactions, Stealth based System with AI(multiplayer integration)</p>
+<h2><p align="center">Weapons & Interactions, Stealth based System with AI(multiplayer integration)</p></h2>
 <p align="center">Built using C++,Blueprints and Unreal Engine</p>
 
 ## Table of Contents
-- [Weapons and Interaction System](#weapons-interactions-stealth-with-ai)
   - [Project Overview](#project-overview)
   - [Gameplay](#gameplay)
   - [Project Details](#project-details)
@@ -12,16 +11,6 @@
   - [Changelog](#changelog)
 - [Smart Enemy Combat and Stealth System with AI](#smart-enemy-combat-and-stealth-system-with-ai)
 
-
-
-# Weapons, Interactions, Stealth with AI
-
-This project is a third person stealth action framework inspired by Hitman.  
-It combines modular weapons, ALS style locomotion, and stealth AI into one extendable foundation.  
-
-Built solo with a focus on clean architecture and scalable gameplay systems.
-
----
 
 ## Project Overview
 - Hitman inspired stealth, interactions, and context actions.
