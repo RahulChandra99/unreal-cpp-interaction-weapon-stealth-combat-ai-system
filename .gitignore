@@ -75,3 +75,15 @@ Intermediate/*
 DerivedDataCache/*
 /Content
 /Content
+
+# Build output, including inside plugins
+Binaries/
+Intermediate/
+Saved/
+DerivedDataCache/
+Plugins/*/Binaries/
+Plugins/*/Intermediate/
+
+# Per-user editor files
+*.DotSettings.user
+.DS_Store
