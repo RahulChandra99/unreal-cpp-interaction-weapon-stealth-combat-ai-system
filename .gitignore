@@ -87,3 +87,7 @@ Plugins/*/Intermediate/
 # Per-user editor files
 *.DotSettings.user
 .DS_Store
+
+# Paid marketplace plugins. Install your own copy from Fab.
+Plugins/DarkerNo*/
+Plugins/Electron*/
